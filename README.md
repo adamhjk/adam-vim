@@ -5,11 +5,8 @@ To use, want to do this:
 
 '''bash
 $ git clone github.com/adamhjk/adam-vim ~/.vim
-$ mkdir ~/.vim/bundle
-$ ln -s ~/.vim/vimrc ~/.vimrc
-$ vim -c 'BundleInstall' -c 'qa!'
-$ cd ~/.vim/bundle/command-t
-$ rake make
+$ cd ~/.vim
+$ make install
 '''
 
 Then marvel at what's up.
@@ -18,10 +15,9 @@ Then marvel at what's up.
 
 Leader is mapped to ','
 
-
 ## Plugins
 
-The current list is maintained in the vimrc through vundle. 
+The current list is maintained in the vimrc through vundle. Check out vimrc.
 
 ## Commands
 
