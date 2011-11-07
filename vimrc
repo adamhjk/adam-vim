@@ -31,6 +31,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-orgmode'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'matchit.zip'
+Bundle 'CSApprox'
 
 filetype plugin indent on     " required! 
 "
@@ -100,6 +101,13 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#WantNailgun = 1
 let python_highlight_all = 1
 
+map <right> :bn<cr>
+map <left> :bp<cr>
+map <leader>tn :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+
 set grepprg=ack
 set grepformat=%f:%l:%m
 
@@ -125,6 +133,11 @@ nmap <D-k> gk
 nmap <D-4> g$
 nmap <D-6> g^
 nmap <D-0> g^
+
+" CSApprox
+if (&term == 'xterm')
+  set t_Co=256
+endif
 
 " Suppress lustyjuggler warnings
 let g:LustyJugglerSuppressRubyWarning = 1
