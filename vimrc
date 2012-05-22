@@ -136,6 +136,11 @@ nmap <D-0> g^
 if (&term == 'xterm')
   set t_Co=256
 endif
+" Make CommandT work with rxvt
+if (&term == 'rxvt-unicode' || &xterm == 'rxvt')
+  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+endif
 
 " Suppress lustyjuggler warnings
 let g:LustyJugglerSuppressRubyWarning = 1
