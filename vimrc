@@ -64,7 +64,7 @@ set autoindent
 set expandtab
 colorscheme twilight 
 if has("gui_gtk2")
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ 16
+  set guifont=Inconsolata\ 12
 else
   set guifont=Inconsolata:h16
 endif
@@ -85,8 +85,6 @@ set statusline+=%<%P                         " file position
 
 compiler ruby
 
-autocmd FileType make     set noexpandtab
-autocmd FileType python   set noexpandtab
 
 let g:fuzzy_ignore = "*.log" 
 let g:fuzzy_matching_limit = 70
@@ -136,6 +134,11 @@ nmap <D-0> g^
 " CSApprox
 if (&term == 'xterm')
   set t_Co=256
+endif
+" Make CommandT work with rxvt
+if (&term == 'rxvt-unicode' || &xterm == 'rxvt')
+  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 endif
 
 " Suppress lustyjuggler warnings
@@ -199,6 +202,8 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
+  autocmd FileType make     set noexpandtab
+  autocmd FileType python   set noexpandtab
   
 
   " For all text files set 'textwidth' to 78 characters.
