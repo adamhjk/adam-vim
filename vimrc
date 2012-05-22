@@ -60,7 +60,7 @@ set autoindent
 set expandtab
 colorscheme twilight 
 if has("gui_gtk2")
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ 16
+  set guifont=Inconsolata\ 12
 else
   set guifont=Inconsolata:h16
 endif
@@ -81,8 +81,6 @@ set statusline+=%<%P                         " file position
 
 compiler ruby
 
-autocmd FileType make     set noexpandtab
-autocmd FileType python   set noexpandtab
 
 let g:fuzzy_ignore = "*.log" 
 let g:fuzzy_matching_limit = 70
@@ -199,6 +197,8 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
+  autocmd FileType make     set noexpandtab
+  autocmd FileType python   set noexpandtab
   
 
   " For all text files set 'textwidth' to 78 characters.
