@@ -18,7 +18,7 @@ Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
 Bundle 'Gist.vim'
 Bundle 'L9'
-Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'kien/ctrlp.vim'
 Bundle 'VimClojure'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
@@ -32,6 +32,10 @@ Bundle 'vim-orgmode'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'matchit.zip'
 Bundle 'CSApprox'
+Bundle 'timcharper/textile.vim'
+Bundle 'jimenezrick/vimerl'
+Bundle 'rson/vim-conque'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on     " required! 
 "
@@ -100,6 +104,7 @@ let g:vimclojure#ParenRainbow = 1
 let g:vimclojure#HighlightBuiltins = 1 
 let g:vimclojure#WantNailgun = 1
 let python_highlight_all = 1
+let g:Powerline_symbols = 'fancy'
 
 map <right> :bn<cr>
 map <left> :bp<cr>
@@ -111,16 +116,10 @@ map <leader>tm :tabmove
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-map <leader>t :CommandT<CR>
-map <leader>b :FufBuffer<CR>
+map <leader>t :CtrlP<CR>
+map <leader>b :CtrlPBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>j :TagbarToggle<CR>
-
-" Command T
-
-let g:CommandTMaxFiles=30000
-let g:CommandTMaxDepth=30
-let g:CommandTMaxHeight=20
 
 " Hold command to do the g for softwrap
 vmap <D-j> gj
@@ -179,6 +178,7 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+au! BufRead,BufNewFile *.confluencewiki set ft=confluencewiki
 autocmd BufRead *\.txt setlocal formatoptions=l
 autocmd BufRead *\.txt setlocal lbr
 autocmd BufRead *\.txt map j gj
@@ -214,24 +214,19 @@ if has("autocmd")
 
   augroup END
 
-
-  if exists("did\_load\_filetypes")
-
-    finish
-
-  endif
-
-  augroup markdown
-
-    au! BufRead,BufNewFile *.mkd   setfiletype mkd
-
-  augroup END
+  au! BufRead,BufNewFile *.mkd   setfiletype mkd
 
   augroup mkd
 
     autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
 
   augroup END
+
+  if exists("did\_load\_filetypes")
+
+    finish
+
+  endif
 
 else
 
