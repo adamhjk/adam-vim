@@ -36,6 +36,7 @@ Bundle 'timcharper/textile.vim'
 Bundle 'jimenezrick/vimerl'
 Bundle 'rson/vim-conque'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'myusuf3/numbers.vim'
 
 filetype plugin indent on     " required! 
 "
@@ -131,14 +132,16 @@ nmap <D-4> g$
 nmap <D-6> g^
 nmap <D-0> g^
 
+" ctrlp
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_max_files = 20000
+
+
+
 " CSApprox
 if (&term == 'xterm')
   set t_Co=256
-endif
-" Make CommandT work with rxvt
-if (&term == 'rxvt-unicode' || &xterm == 'rxvt')
-  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 endif
 
 " Suppress lustyjuggler warnings
