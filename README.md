@@ -11,6 +11,12 @@ $ make install
 
 Then marvel at what's up.
 
+## Install fonts
+
+You need the inconsolata patched for powerline:
+
+https://gist.github.com/1595572
+
 ## Important configuration stuff
 
 Leader is mapped to ','
