@@ -37,6 +37,9 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'rson/vim-conque'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/syntastic'
+Bundle 'JSON.vim'
 
 filetype plugin indent on     " required! 
 "
@@ -63,7 +66,9 @@ set tabstop=2
 set autoindent
 " Use spaces instead of tabs
 set expandtab
+set background=dark
 colorscheme twilight 
+" colorscheme solarized
 if has("gui_gtk2")
   set guifont=Inconsolata\ 12
 else
@@ -191,6 +196,17 @@ autocmd BufRead *\.txt map j gj
 autocmd BufRead *\.txt map k gk
 autocmd BufRead *\.txt setlocal smartindent
 autocmd BufRead *\.txt setlocal spell spelllang=en_us
+
+au! BufRead,BufNewFile *.json set filetype=json 
+augroup json_autocmd 
+  autocmd! 
+  autocmd FileType json set autoindent 
+  autocmd FileType json set formatoptions=tcq2l 
+  autocmd FileType json set textwidth=78 shiftwidth=2 
+  autocmd FileType json set softtabstop=2 tabstop=8 
+  autocmd FileType json set expandtab 
+  autocmd FileType json set foldmethod=syntax 
+augroup END 
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
