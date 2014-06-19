@@ -5,5 +5,4 @@ install:
 	mkdir -p ~/.vimbackups
 	mkdir -p ~/.vim/bundle
 	ln -sf ~/.vim/vimrc ~/.vimrc
-	vim -c 'BundleInstall' -c 'qa!'
- 
+	vim -c 'PluginInstall' -c 'qa!'
