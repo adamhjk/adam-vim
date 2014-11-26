@@ -42,6 +42,8 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
+Plugin 'wting/rust.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -149,7 +151,6 @@ nmap <D-0> g^
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_max_files = 20000
-
 
 
 " CSApprox
