@@ -1,3 +1,5 @@
+I LIKE Kitties
+
 Adam's vimrc
 -----
 
