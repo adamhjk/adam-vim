@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle
 call vundle#begin()
 
 " let Vundle manage Vundle
@@ -34,7 +34,7 @@ Plugin 'matchit.zip'
 Plugin 'CSApprox'
 Plugin 'timcharper/textile.vim'
 Plugin 'jimenezrick/vimerl'
-Plugin 'rson/vim-conque'
+Plugin 'skwp/vim-conque'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'JSON.vim'
