@@ -6,5 +6,6 @@ install:
 	mkdir -p ~/.vim/bundle
 	ln -sf ~/.vim/vimrc ~/.vimrc
 	ln -sf ~/.vim/vimrc ~/.vim/init.vim
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-	vim -c 'PlugInstall' -c 'qa!'
+	nvim -c 'PlugInstall' -c 'qa!'

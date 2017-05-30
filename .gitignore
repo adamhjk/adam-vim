@@ -2,3 +2,6 @@
 *.swp
 bundle/*
 tags
+tags.lock
+tags.temp
+init.vim
