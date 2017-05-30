@@ -1,3 +1,4 @@
 .net*
 *.swp
 bundle/*
+tags
