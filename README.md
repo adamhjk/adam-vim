@@ -13,9 +13,9 @@ Then marvel at what's up.
 
 ## Install fonts
 
-You need the inconsolata patched for powerline:
+You'll need Inconsolata for Powerline. Easy to get here:
 
-https://gist.github.com/1595572
+https://github.com/powerline/fonts
 
 ## Important configuration stuff
 
@@ -23,9 +23,15 @@ Leader is mapped to ','
 
 ## Plugins
 
-The current list is maintained in the vimrc through vundle. Check out vimrc.
+The current list is maintained in the vimrc through Plug. Check out vimrc.
 
 ## Commands
+
+### Plug
+
+```
+[:PlugInstall] Install plugins
+```
 
 ### Git
 ```
@@ -43,18 +49,21 @@ The current list is maintained in the vimrc through vundle. Check out vimrc.
 [:GitVimDiffMerge]     Experimental. Call this command on unmerged file to enter vimdiff mode.
 [:GitVimDiffMergeDone] Call this command after merging.
 ```
-### Ack
+
+### Ag
+
+Make sure you have the [Silver Searcher](https://geoff.greer.fm/ag/) installed
+
 ```
-[:Ack] Takes options, a pattern, and a directory.  Shows results in a quickbuffer.
-[:AckAdd] Like Ack + grepadd - adds to, rather than replaces, the quickbuffer.
-[:LAck] Ack + lgrep - opens in location-list
-[:LAckAdd] Appends to the location list
+[:Ag <search>]         Search for a string, load in a buffer
 ```
+
 ### Tags
 ```
-[:TlistOpen] Opens the tag list window
-[:TlistToggle] Toggle the tag list window
+[<leader>j]    Tags for the current buffer
+[<leader>J]    Tags for the whole project
 ```
+
 ### Surround
 Details follow on the exact semantics, but first, consider the following
 examples.  An asterisk (*) is used to denote the cursor position.
@@ -85,6 +94,7 @@ examples.  An asterisk (*) is used to denote the cursor position.
 [,cb] = Comment and align on both sides
 [,cu] = Uncomment the selected lines
 ```
+
 ### Gist
 ```
 [:Gist] = post the whole text to gist
@@ -98,18 +108,21 @@ examples.  An asterisk (*) is used to denote the cursor position.
 [:Gist -l] = List my gists
 [:Gist -la] = List gists from all
 ```
+
 ### Textile
 ```
 [,rp] = :TextilePreview - render textile to a temp file, open in browser
 [,rt] = :TextileRenderTab - render textile to a new tab
 [,rf] = :TextileREdnerFile - render to a file
 ```
+
 ### Keymaps
 ```
 [,d] = Toggle NERDtree
-[,t] = Command-T
-[,b] = FuzzyBufferFinder
-[,l] = TListToggle 
+[,t] = Fuzzy find files by name
+[,b] = Fuzzy find buffers by name
+[,j] = Fuzzy find tags in the current buffers
+[,J] = Fuzzy find tags in the whole project
 [,gd] :GitDiff
 [,gD] :GitDiff --cached
 [,gs] :GitStatus
@@ -118,6 +131,7 @@ examples.  An asterisk (*) is used to denote the cursor position.
 [,gA] :GitAdd <cfile>
 [,gc] :GitCommit
 ```
+
 ### In git-status buffer
 ```
 [<Enter>]    :GitAdd <cfile>
